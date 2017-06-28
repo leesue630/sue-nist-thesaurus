@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import webapp.Data.TermEntries;
 import webapp.Entity.TermEntry;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 /**
@@ -15,13 +16,17 @@ import java.util.Collection;
 public class EntryService {
 
     @Autowired
-    private TermEntries entries;
+    private TermEntries termEntries;
 
-    public Collection<TermEntry> getAllStudents(){
-        return this.entries.getAllEntries();
+    public Collection<TermEntry> getAllEntries(){
+        return this.termEntries.getAllEntries();
     }
 
     public TermEntry getEntryByTerm(String term){
-        return this.entries.getEntryByTerm(term);
+        return this.termEntries.getEntryByTerm(term);
+    }
+
+    public ArrayList<String> getEntryTermNames(){
+        return this.termEntries.getEntryTermNames();
     }
 }

@@ -1,10 +1,14 @@
 package webapp.Data;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+
+import org.springframework.stereotype.Service;
 import webapp.Entity.TermEntry;
 
 /**
@@ -21,11 +25,25 @@ public class TermEntries {
         termEntries = new HashMap<String, TermEntry>(){
 
             {
-                put("dog", new TermEntry("dog", 1, "animal that barks"));
-                put("cat", new TermEntry("cat", 2, "animal that meows"));
-                put("kitty", new TermEntry("kitty", 3, "animal that meows"));
+                put("dog", new TermEntry("dog", 1, "animal that barks", new ArrayList<String>() {
+                    {
+                        add("doggy");
+                        add("puppy");}
+                }));
+                put("cat", new TermEntry("cat", 2, "animal that meows", new ArrayList<String>() {
+                    {
+                        add("kitty");
+                        add("kitten");}
+                }));
+                put("kitty", new TermEntry("kitty", 3, "small animal that meows", new ArrayList<String>() {
+                    {
+                        add("cat");
+                        add("kitty");}
+                }));
             }
         };
+
+
     }
 
     public Collection<TermEntry> getAllEntries(){
@@ -35,4 +53,11 @@ public class TermEntries {
     public TermEntry getEntryByTerm(String term){
         return this.termEntries.get(term);
     }
+
+    public ArrayList<String> getEntryTermNames(){
+        return new ArrayList<String>(this.termEntries.keySet());
+    }
+
+    // TODO
+    public void getEntrySynonyms(){}
 }

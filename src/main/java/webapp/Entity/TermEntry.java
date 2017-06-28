@@ -1,22 +1,22 @@
 package webapp.Entity;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by lns16 on 6/27/2017.
  */
 public class TermEntry {
 
-    //private List<String> synonyms = new ArrayList<String>();
+    private ArrayList<String> synonyms = new ArrayList<String>();
     private String term;
     private int id;
     private String description;
 
-    public TermEntry(String term, int id, String description) {
+    public TermEntry(String term, int id, String description, ArrayList<String> synonyms) {
         this.term = term;
         this.id = id;
         this.description = description;
+        this.synonyms = synonyms;
     }
 
     public TermEntry(){}
@@ -43,5 +43,13 @@ public class TermEntry {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public ArrayList<String> getSynonyms() {
+        return synonyms;
+    }
+
+    public void addSynonym(String synonym){
+        this.synonyms.add(synonym);
     }
 }
