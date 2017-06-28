@@ -1,0 +1,23 @@
+body {
+    background-color: powderblue;
+	font-family:Helvetica;
+}
+h1 {
+	font-size: 20px;
+	text-align: left;
+	font-weight:normal;
+}
+div {
+	margin: 10px;
+	padding: 10px;
+	background-color: #e0ebeb;
+	color: black;
+	border: 1px solid black;
+    border-radius: 5px;
+}
+.full {
+	width=%100;
+}
+.side {
+	float:left;
+}
