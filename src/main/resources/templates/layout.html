@@ -1,14 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <title>OAGIS Thesaurus</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <link th:href="@{/css/styles.css}" rel="stylesheet" href="../static/css/styles.css" type="text/css" />
-</head>
+<head th:replace="fragments :: head"></head>
 <body>
-<div class = "full">
-    <h1>OAGIS Thesaurus</h1>
-</div>
+<div th:replace="fragments :: titlebar"></div>
 <div class = "side">
     <h1>Terms</h1>
     <ul>
