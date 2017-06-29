@@ -29,4 +29,5 @@ public class EntryService {
     public ArrayList<String> getEntryTermNames(){
         return this.termEntries.getEntryTermNames();
     }
+
 }

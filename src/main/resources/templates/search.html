@@ -4,7 +4,11 @@
 <body>
     <div th:replace="fragments :: titlebar"></div>
     <div class ="full">
-        <p th:text="'OAGIS Thesaurus: Search for ' + ${term}"></p>
+        <p th:text="'OAGIS Thesaurus: Search for &quot;' + ${searchTerm} + '&quot;'"></p>
+        <div>
+            <p th:text="${term != null} ? ${term} + ': ' + ${description} : 'No Results'"></p>
+            <!--<p th:text="${term != null} ? ${term} : 'No Results'"></p>-->
+        </div>
     </div>
 </body>
 </html>

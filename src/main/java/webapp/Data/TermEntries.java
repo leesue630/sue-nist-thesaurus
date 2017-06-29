@@ -51,6 +51,9 @@ public class TermEntries {
     }
 
     public TermEntry getEntryByTerm(String term){
+        if (!termEntries.containsKey(term)){
+            return null;
+        }
         return this.termEntries.get(term);
     }
 
