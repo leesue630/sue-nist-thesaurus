@@ -56,7 +56,12 @@ public class InputController {
             String description = result.getDescription();
             model.addAttribute("description", description);
         }
-        model.addAttribute("searchTerm", searchTerm);
+        if (!(searchTerm == null)) {
+            model.addAttribute("searchTerm", searchTerm);
+        } else {
+            model.addAttribute("searchTerm", "...");
+        }
+
         // string is the name of the html file
         return "search";
     }

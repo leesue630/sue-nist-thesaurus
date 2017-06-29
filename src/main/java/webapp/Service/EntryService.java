@@ -18,15 +18,15 @@ public class EntryService {
     @Autowired
     private TermEntries termEntries;
 
-    public Collection<TermEntry> getAllEntries(){
+    public Collection<TermEntry> getAllEntries() {
         return this.termEntries.getAllEntries();
     }
 
-    public TermEntry getEntryByTerm(String term){
+    public TermEntry getEntryByTerm(String term) {
         return this.termEntries.getEntryByTerm(term);
     }
 
-    public ArrayList<String> getEntryTermNames(){
+    public ArrayList<String> getEntryTermNames() {
         return this.termEntries.getEntryTermNames();
     }
 

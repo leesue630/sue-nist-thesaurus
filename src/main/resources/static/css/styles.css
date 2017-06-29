@@ -1,7 +1,13 @@
+html {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-    background-color: #e0ebeb;
+    background-color: #ebebeb;
 	font-family:Helvetica;
-	padding:5px;
+	margin: 0;
+    padding: 0;
 }
 h1 {
 	font-size: 15px;
@@ -9,7 +15,7 @@ h1 {
 	font-weight:normal;
 }
 div {
-	margin: 5px;
+	margin: 15px;
 	padding-left:10px;
 	padding-right:10px;
 	background-color: white;
@@ -25,4 +31,33 @@ div {
 }
 form {
     margin: 10px;
+}
+
+ul.nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: white;
+    border: 1px solid black;
+}
+
+li.nav {
+    float: left;
+}
+
+li.nav a {
+    display: block;
+    background-color: #cccccc;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 10px;
+    color: white;
+    text-align: center;
+    padding: 10px 12px;
+    text-decoration: none;
+}
+
+li.nav a:hover {
+    background-color: #b5b5b5;
 }

@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head">
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <link th:href="@{/css/styles.css}" rel="stylesheet" href="../static/css/styles.css" type="text/css" media="all"/>
     <title th:text="'OAGIS Thesaurus: ' + ${searchTerm}">OAGIS Thesaurus</title>
 </head>
 <body>
-<div class = "full" th:fragment="titlebar">
-    <h1>OAGIS Thesaurus</h1>
+<div class="full" th:fragment="titlebar">
+    <span>OAGIS Thesaurus</span>
     <form method="post">
-        <input type="text" name="searchTerm" />
-        <input type="submit" name="Search" />
+        <input type="text" name="searchTerm"/>
+        <input type="submit" name="Search"/>
     </form>
 </div>
+
+<ul class="nav" th:fragment="navigation">
+    <li class="nav"><a class="active" href="/">Home</a></li>
+    <li class="nav"><a class="active" href="/search">Search</a></li>
+</ul>
 
 </body>
 </html>

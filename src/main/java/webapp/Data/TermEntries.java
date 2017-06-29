@@ -22,23 +22,26 @@ public class TermEntries {
 
     static {
 
-        termEntries = new HashMap<String, TermEntry>(){
+        termEntries = new HashMap<String, TermEntry>() {
 
             {
                 put("dog", new TermEntry("dog", 1, "animal that barks", new ArrayList<String>() {
                     {
                         add("doggy");
-                        add("puppy");}
+                        add("puppy");
+                    }
                 }));
                 put("cat", new TermEntry("cat", 2, "animal that meows", new ArrayList<String>() {
                     {
                         add("kitty");
-                        add("kitten");}
+                        add("kitten");
+                    }
                 }));
                 put("kitty", new TermEntry("kitty", 3, "small animal that meows", new ArrayList<String>() {
                     {
                         add("cat");
-                        add("kitty");}
+                        add("kitty");
+                    }
                 }));
             }
         };
@@ -46,21 +49,22 @@ public class TermEntries {
 
     }
 
-    public Collection<TermEntry> getAllEntries(){
+    public Collection<TermEntry> getAllEntries() {
         return this.termEntries.values();
     }
 
-    public TermEntry getEntryByTerm(String term){
-        if (!termEntries.containsKey(term)){
+    public TermEntry getEntryByTerm(String term) {
+        if (!termEntries.containsKey(term)) {
             return null;
         }
         return this.termEntries.get(term);
     }
 
-    public ArrayList<String> getEntryTermNames(){
+    public ArrayList<String> getEntryTermNames() {
         return new ArrayList<String>(this.termEntries.keySet());
     }
 
     // TODO
-    public void getEntrySynonyms(){}
+    public void getEntrySynonyms() {
+    }
 }
