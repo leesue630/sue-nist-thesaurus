@@ -5,11 +5,11 @@
 <div class="container" th:replace="fragments :: navigation"></div>
 <div class="container" id="search-results-wrapper">
     <p th:text="'OAGIS Thesaurus: Search for &quot;' + ${searchTerm} + '&quot;'"></p>
-    <form th:each="result : ${resultEntrySet}" method="post" th:unless="!${result.key}">
+    <form th:each="result : ${resultEntrySet}" method="post" th:unless="!${result.key}" style="padding:5px">
         <button type="submit" name="showInfoTerm" th:value="${result.key}" th:text="${result.key} + ': ' + ${result.value}" class="link-button">
         </button>
     </form>
-    <p th:unless="${resultEntrySet}">No results</p>
+    <p th:unless="${resultEntrySet} and ${resultEntrySet.size()}">No results</p>
 </div>
 </body>
 </html>
