@@ -64,7 +64,10 @@ public class TermEntries {
         return new ArrayList<String>(this.termEntries.keySet());
     }
 
-    // TODO
-    public void getEntrySynonyms() {
+    public ArrayList<String> getSynonymsByTerm(String term) {
+        if (!termEntries.containsKey(term)) {
+            return null;
+        }
+        return this.termEntries.get(term).getSynonyms();
     }
 }

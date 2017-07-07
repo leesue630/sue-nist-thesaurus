@@ -2,16 +2,39 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments :: head"></head>
 <body>
-<div th:replace="fragments :: navigation"></div>
-<div th:replace="fragments :: titlebar"></div>
-<div class = "side">
-    <h1>Terms</h1>
+<div class="container" th:replace="fragments :: navigation"></div>
+<!-- Sidebar-->
+<div id="sidebar-wrapper">
+    <p>Terms</p>
     <ul>
-        <li th:each ="entry : ${termEntries}" th:text="${entry}"></li>
+        <li th:each="entry : ${termEntries}">
+            <form method="post">
+                <button type="submit" name="showInfoTerm" th:value="${entry}" th:text="${entry}" class="link-button">
+                </button>
+            </form>
+        </li>
     </ul>
 </div>
-<div class = "side">
-    <h1>Properties</h1>
+
+<!-- Main Content-->
+<div id="page-content-wrapper">
+    <p>Properties</p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Term</th>
+            <th>Description</th>
+            <th>Synonyms</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td th:text="${showTerm}"></td>
+            <td th:text="${showDescription}"></td>
+            <td th:text="${showSynonyms}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

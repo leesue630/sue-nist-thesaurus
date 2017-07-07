@@ -2,13 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:replace="fragments :: head"></head>
 <body>
-<div th:replace="fragments :: navigation"></div>
-<div th:replace="fragments :: titlebar"></div>
-<div class="full">
+<div class="container" th:replace="fragments :: navigation"></div>
+<div class="container" id="search-results-wrapper">
     <p th:text="'OAGIS Thesaurus: Search for &quot;' + ${searchTerm} + '&quot;'"></p>
-    <div>
-        <p th:text="${term != null} ? ${term} + ': ' + ${description} : 'No Results'"></p>
-    </div>
+    <form th:each="result : ${resultEntrySet}" method="post" th:unless="!${result.key}">
+        <button type="submit" name="showInfoTerm" th:value="${result.key}" th:text="${result.key} + ': ' + ${result.value}" class="link-button">
+        </button>
+    </form>
+    <p th:unless="${resultEntrySet}">No results</p>
 </div>
 </body>
 </html>

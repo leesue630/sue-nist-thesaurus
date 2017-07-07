@@ -2,21 +2,33 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="head">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link th:href="@{/css/styles.css}" rel="stylesheet" href="../static/css/styles.css" type="text/css" media="all"/>
     <title th:text="'OAGIS Thesaurus: ' + ${searchTerm}">OAGIS Thesaurus</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <link th:href="@{/css/styles.css}" rel="stylesheet" href="../static/css/styles.css" type="text/css" media="all"/>
 </head>
 <body>
-<div class="full" th:fragment="titlebar">
+<!--<div class="full" th:fragment="titlebar">
     <span>OAGIS Thesaurus</span>
     <form method="post">
         <input type="text" name="searchTerm"/>
         <input type="submit" name="Search"/>
     </form>
-</div>
+</div>-->
 
-<ul class="nav" th:fragment="navigation">
-    <li class="nav"><a class="active" href="/">Home</a></li>
-    <li class="nav"><a class="active" href="/search">Search</a></li>
+<ul class="nav nav-tabs" th:fragment="navigation" style="padding:5px;">
+    <li class="nav-item">
+        <a class="nav-link active" href="./">Home</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="./search">Search</a>
+    </li>
+    <li>
+        <form class="form-inline my-2 my-lg-0" method="post">
+            <input class="form-control mr-sm-2" placeholder="Search term" type="text" name="searchTerm"/>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+    </li>
 </ul>
 
 </body>

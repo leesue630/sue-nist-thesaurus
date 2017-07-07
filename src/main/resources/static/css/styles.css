@@ -1,4 +1,4 @@
-html {
+/*html {
     margin: 0;
     padding: 0;
 }
@@ -60,4 +60,55 @@ li.nav a {
 
 li.nav a:hover {
     background-color: #b5b5b5;
+}*/
+
+#sidebar-wrapper{
+    background-color: #d1d1d1;
+    position: absolute;
+    z-index: 1;
+    height: 500px;
+    width: 150px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+#page-content-wrapper {
+    background-color: #ededed;
+    width: 100%;
+    margin: 10px;
+    height: 500px;
+    position: absolute;
+    padding: 10px;
+    padding-left: 160px;
+    border-radius: 3px;
+}
+
+#search-results-wrapper {
+    background-color: #ededed;
+    width: auto;
+    height:500px;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 3px;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #93add8;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1em;
+}
+.link-button:focus {
+  outline: none;
+}
+
+.link-button:hover {
+  color: #7e94b7;
+}
+
+.link-button:active {
+  color: #62738e;
 }
